@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/">
+        <file>res/up.png</file>
+        <file>res/down.png</file>
+        <file>res/x.png</file>
+        <file>style/Dark.qss</file>
+        <file>res/script_icon.png</file>
+        <file>res/object.png</file>
+        <file>res/play.png</file>
+        <file>res/bloop.mp3</file>
+    </qresource>
+</RCC>
