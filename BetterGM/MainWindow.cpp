@@ -490,6 +490,8 @@ void MainWindow::makeHost() {
     connect(mServer, SIGNAL(newIP(QString)), this, SLOT(newIP(QString)));
     connect(mServer, SIGNAL(newPort(QString)), this, SLOT(newPort(QString)));
     connect(mServer, SIGNAL(newMessage(QString,QString)), this, SLOT(recieveMessage(QString,QString)));
+    connect(mServer, SIGNAL(serverCursorMoved(QString,int)), this, SLOT(clientCursorMoved(QString,int)));
+    connect(mServer, SIGNAL(addUser(QString)), this, SLOT(addUser(QString)));
     mServer->start();
 }
 
@@ -589,7 +591,7 @@ void MainWindow::clientCursorMoved(QString client, int pos) {
 }
 
 void MainWindow::addUser(QString user) {
-    qDebug() << "add";
+    qDebug() << "add" << user;
     QTextCursor cursor(mCodeEditor->document());
     cursor.setPosition(0);
     mCodeEditor->addCursor(user, cursor);

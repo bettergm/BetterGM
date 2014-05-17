@@ -150,7 +150,9 @@ void Client::read() {
     case MSG_ADD: {
         QString usr;
         for (; i < tmp.length(); i++) {
-            usr += tmp[i];
+            if (tmp[i] != ' ') {
+                usr += tmp[i];
+            }
         }
         emit addUser(usr);
         break;

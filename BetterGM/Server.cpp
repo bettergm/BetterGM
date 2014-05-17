@@ -169,8 +169,35 @@ void Server::clienRead() {
                 c->write(data);
             }
         }
-    }
         break;
+    }
+    case MSG_CURSOR: {
+        QString pos, usr;
+        bool userFound = false;
+        for (; i < tmp.length(); i++) {
+            if (!userFound) {
+                if (tmp[i] == ' ') {
+                    userFound = true;
+                    continue;
+                }
+                usr += tmp[i];
+            } else {
+                pos += tmp[i];
+            }
+        }
+        emit serverCursorMoved(usr, pos.toInt());
+        break;
+    }
+    case MSG_ADD: {
+        QString usr;
+        for (; i < tmp.length(); i++) {
+            if (tmp[i] != ' ') {
+                usr += tmp[i];
+            }
+        }
+        emit addUser(usr);
+        break;
+    }
     }
 }
 

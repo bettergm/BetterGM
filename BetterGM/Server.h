@@ -49,6 +49,8 @@ signals:
     void newPort(QString);
     
     void newMessage(QString, QString);
+    void serverCursorMoved(QString, int);
+    void addUser(QString);
     
 private:
     QTcpServer *mServer;

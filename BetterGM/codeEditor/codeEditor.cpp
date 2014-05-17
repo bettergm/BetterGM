@@ -1413,12 +1413,9 @@ int CodeEditor::cursorCount() {
 }
 
 void CodeEditor::moveClientCursor(QString client, int pos) {
-    QTextCursor cursor = mCursors.value(client);
-    qDebug() << cursor.position();
+    QTextCursor cursor(document());
     cursor.setPosition(pos);
-    qDebug() << cursor.position();
-    cursor = mCursors.value(client);
-    qDebug() << cursor.position();
+    mCursors.insert(client, cursor);
     repaint();
 }
 
