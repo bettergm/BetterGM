@@ -460,7 +460,7 @@ void MainWindow::openItem(QString path, QString name) {
         mCentralWidget->setName(mCodeEditor->getName());
         mCodeEditor->updateCorner();
         
-        if (mCodeEditor->cursorCount() == 0) {
+        if (mCodeEditor->cursorCount() == 0 && false) {
             QTextCursor cur(mCodeEditor->document());
             cur.setPosition(200);
             mCodeEditor->addCursor("bob", cur);
