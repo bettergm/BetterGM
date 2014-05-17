@@ -1423,6 +1423,16 @@ void CodeEditor::moveClientCursor(QString client, int pos) {
 
 void CodeEditor::clientKeyPressed(QString client, QString key) {
     int pos = mCursors.value(client).position();
+    QTextCursor cursor(document());
+    cursor.setPosition(pos);
+    
+    if (key[0] == '\b') {
+        cursor.deletePreviousChar();
+    } else {
+        cursor.insertText(QString(key[0]));
+    }
+    
+    mCursors.insert(client, cursor);
     qDebug() << key << pos;
 }
 

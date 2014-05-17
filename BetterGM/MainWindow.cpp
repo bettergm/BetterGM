@@ -642,7 +642,6 @@ void MainWindow::keyPressed(QString key) {
         return;
     }
     
-    qDebug() << "key" << key;
     if (mServer) {
         mServer->sendMessage("6 " + mUsername, key);
     } else if (mLocalClient) {
