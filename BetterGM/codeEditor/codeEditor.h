@@ -85,6 +85,7 @@ public:
     
     int cursorCount();
     void moveClientCursor(QString client, int pos);
+    void clientKeyPressed(QString client, QString key);
 
 public slots:
     void findText();
@@ -133,6 +134,8 @@ signals:
     void modifiedChanged(bool);
     
     void cursorPosition(int);
+    
+    void pressed(QString);
 
 private:
     friend class LineNumberArea;

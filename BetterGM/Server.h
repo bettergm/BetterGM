@@ -19,7 +19,8 @@ public:
         MSG_CODE = 2,
         MSG_FILE = 3,
         MSG_ADD = 4,
-        MSG_REMOVE = 5
+        MSG_REMOVE = 5,
+        MSG_KEY = 6
     };
     
     void start();
@@ -51,6 +52,7 @@ signals:
     void newMessage(QString, QString);
     void serverCursorMoved(QString, int);
     void addUser(QString);
+    void serverKeyPressed(QString, QString);
     
 private:
     QTcpServer *mServer;

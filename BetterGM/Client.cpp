@@ -155,6 +155,25 @@ void Client::read() {
         emit addUser(usr);
         break;
     }
+    case MSG_KEY: {
+        QString key, usr;
+        bool userFound = false;
+        for (; i < tmp.length(); i++) {
+            if (!userFound) {
+                if (tmp[i] == ' ') {
+                    userFound = true;
+                    continue;
+                }
+                usr += tmp[i];
+            } else {
+                key += tmp[i];
+            }
+        }
+        
+        qDebug() << "key" << key;
+        emit clientKeyPressed(usr, key);
+        break;
+    }
     }
 }
 

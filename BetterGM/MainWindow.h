@@ -83,6 +83,9 @@ public slots:
     void readGameOut();
     void playGame();
     
+    void keyPressed(QString key);
+    void clientKeyPressed(QString client, QString key);
+    
 private:
     Ui::MainWindow *ui;
     

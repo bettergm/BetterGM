@@ -22,40 +22,41 @@ static const uint qt_meta_data_CodeEditor[] = {
        6,       // revision
        0,       // classname
        0,    0, // classinfo
-      24,   14, // methods
+      25,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
-       4,       // signalCount
+       5,       // signalCount
 
  // signals: signature, parameters, type, tag, flags
       17,   12,   11,   11, 0x05,
       50,   44,   11,   11, 0x05,
       79,   11,   11,   11, 0x05,
      101,   11,   11,   11, 0x05,
+     121,   11,   11,   11, 0x05,
 
  // slots: signature, parameters, type, tag, flags
-     121,   11,   11,   11, 0x0a,
-     132,   11,   11,   11, 0x0a,
-     152,   11,   11,   11, 0x0a,
-     179,   11,   11,   11, 0x0a,
-     199,  193,   11,   11, 0x0a,
-     228,  223,   11,   11, 0x0a,
-     253,  248,   11,   11, 0x0a,
-     281,  270,   11,   11, 0x0a,
-     310,  305,   11,   11, 0x0a,
-     331,   11,   11,   11, 0x0a,
-     346,   11,   11,   11, 0x0a,
-     376,  362,   11,   11, 0x08,
-     407,   11,   11,   11, 0x08,
-     434,  430,   11,   11, 0x08,
-     465,   11,   11,   11, 0x28,
-     497,  489,   11,   11, 0x08,
-     529,   11,   11,   11, 0x08,
-     565,  554,   11,   11, 0x08,
-     591,   11,   11,   11, 0x08,
-     629,  614,   11,   11, 0x08,
+     138,   11,   11,   11, 0x0a,
+     149,   11,   11,   11, 0x0a,
+     169,   11,   11,   11, 0x0a,
+     196,   11,   11,   11, 0x0a,
+     216,  210,   11,   11, 0x0a,
+     245,  240,   11,   11, 0x0a,
+     270,  265,   11,   11, 0x0a,
+     298,  287,   11,   11, 0x0a,
+     327,  322,   11,   11, 0x0a,
+     348,   11,   11,   11, 0x0a,
+     363,   11,   11,   11, 0x0a,
+     393,  379,   11,   11, 0x08,
+     424,   11,   11,   11, 0x08,
+     451,  447,   11,   11, 0x08,
+     482,   11,   11,   11, 0x28,
+     514,  506,   11,   11, 0x08,
+     546,   11,   11,   11, 0x08,
+     582,  571,   11,   11, 0x08,
+     608,   11,   11,   11, 0x08,
+     646,  631,   11,   11, 0x08,
 
        0        // eod
 };
@@ -64,12 +65,13 @@ static const char qt_meta_stringdata_CodeEditor[] = {
     "CodeEditor\0\0info\0statusInfoChanged(QString)\0"
     "text,\0locateFunction(QString,bool)\0"
     "modifiedChanged(bool)\0cursorPosition(int)\0"
-    "findText()\0updateMiniMapText()\0"
-    "updateMiniMapVisibleArea()\0setModified()\0"
-    "state\0cleanStateChanged(bool)\0mini\0"
-    "setUseMiniMap(bool)\0tabs\0setUseTabs(bool)\0"
-    "tabsSpaces\0setShowTabsSpaces(bool)\0"
-    "wrap\0setUseWordWrap(bool)\0updateCorner()\0"
+    "pressed(QString)\0findText()\0"
+    "updateMiniMapText()\0updateMiniMapVisibleArea()\0"
+    "setModified()\0state\0cleanStateChanged(bool)\0"
+    "mini\0setUseMiniMap(bool)\0tabs\0"
+    "setUseTabs(bool)\0tabsSpaces\0"
+    "setShowTabsSpaces(bool)\0wrap\0"
+    "setUseWordWrap(bool)\0updateCorner()\0"
     "cursorChanged()\0newBlockCount\0"
     "updateLineNumberAreaWidth(int)\0"
     "highlightCurrentLine()\0txt\0"
@@ -92,26 +94,27 @@ void CodeEditor::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 1: _t->locateFunction((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< bool(*)>(_a[2]))); break;
         case 2: _t->modifiedChanged((*reinterpret_cast< bool(*)>(_a[1]))); break;
         case 3: _t->cursorPosition((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 4: _t->findText(); break;
-        case 5: _t->updateMiniMapText(); break;
-        case 6: _t->updateMiniMapVisibleArea(); break;
-        case 7: _t->setModified(); break;
-        case 8: _t->cleanStateChanged((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 9: _t->setUseMiniMap((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 10: _t->setUseTabs((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 11: _t->setShowTabsSpaces((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 12: _t->setUseWordWrap((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 13: _t->updateCorner(); break;
-        case 14: _t->cursorChanged(); break;
-        case 15: _t->updateLineNumberAreaWidth((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 16: _t->highlightCurrentLine(); break;
-        case 17: _t->highlightSelectedWord((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 18: _t->highlightSelectedWord(); break;
-        case 19: _t->updateLineNumberArea((*reinterpret_cast< const QRect(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
-        case 20: _t->updateMiniMapScrollPos(); break;
-        case 21: _t->insertCompletion((*reinterpret_cast< const QString(*)>(_a[1]))); break;
-        case 22: _t->blockOrColumnChanged(); break;
-        case 23: _t->highlightJumpToDefinition((*reinterpret_cast< QTextCursor(*)>(_a[1])),(*reinterpret_cast< bool(*)>(_a[2]))); break;
+        case 4: _t->pressed((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 5: _t->findText(); break;
+        case 6: _t->updateMiniMapText(); break;
+        case 7: _t->updateMiniMapVisibleArea(); break;
+        case 8: _t->setModified(); break;
+        case 9: _t->cleanStateChanged((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 10: _t->setUseMiniMap((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 11: _t->setUseTabs((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 12: _t->setShowTabsSpaces((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 13: _t->setUseWordWrap((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 14: _t->updateCorner(); break;
+        case 15: _t->cursorChanged(); break;
+        case 16: _t->updateLineNumberAreaWidth((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 17: _t->highlightCurrentLine(); break;
+        case 18: _t->highlightSelectedWord((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 19: _t->highlightSelectedWord(); break;
+        case 20: _t->updateLineNumberArea((*reinterpret_cast< const QRect(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
+        case 21: _t->updateMiniMapScrollPos(); break;
+        case 22: _t->insertCompletion((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+        case 23: _t->blockOrColumnChanged(); break;
+        case 24: _t->highlightJumpToDefinition((*reinterpret_cast< QTextCursor(*)>(_a[1])),(*reinterpret_cast< bool(*)>(_a[2]))); break;
         default: ;
         }
     }
@@ -149,9 +152,9 @@ int CodeEditor::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 24)
+        if (_id < 25)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 24;
+        _id -= 25;
     }
     return _id;
 }
@@ -182,5 +185,12 @@ void CodeEditor::cursorPosition(int _t1)
 {
     void *_a[] = { 0, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
     QMetaObject::activate(this, &staticMetaObject, 3, _a);
+}
+
+// SIGNAL 4
+void CodeEditor::pressed(QString _t1)
+{
+    void *_a[] = { 0, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    QMetaObject::activate(this, &staticMetaObject, 4, _a);
 }
 QT_END_MOC_NAMESPACE

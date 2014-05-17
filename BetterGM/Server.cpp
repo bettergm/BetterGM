@@ -198,6 +198,23 @@ void Server::clienRead() {
         emit addUser(usr);
         break;
     }
+    case MSG_KEY: {
+        QString key, usr;
+        bool userFound = false;
+        for (; i < tmp.length(); i++) {
+            if (!userFound) {
+                if (tmp[i] == ' ') {
+                    userFound = true;
+                    continue;
+                }
+                usr += tmp[i];
+            } else {
+                key += tmp[i];
+            }
+        }
+        emit serverKeyPressed(usr, key);
+        break;
+    }
     }
 }
 

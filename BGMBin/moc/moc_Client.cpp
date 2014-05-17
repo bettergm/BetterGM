@@ -22,22 +22,23 @@ static const uint qt_meta_data_Client[] = {
        6,       // revision
        0,       // classname
        0,    0, // classinfo
-       6,   14, // methods
+       7,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
-       3,       // signalCount
+       4,       // signalCount
 
  // signals: signature, parameters, type, tag, flags
       10,    8,    7,    7, 0x05,
       38,    8,    7,    7, 0x05,
       69,    7,    7,    7, 0x05,
+      86,    8,    7,    7, 0x05,
 
  // slots: signature, parameters, type, tag, flags
-      98,   86,    7,    7, 0x0a,
-     141,    7,    7,    7, 0x0a,
-     157,    7,    7,    7, 0x0a,
+     132,  120,    7,    7, 0x0a,
+     175,    7,    7,    7, 0x0a,
+     191,    7,    7,    7, 0x0a,
 
        0        // eod
 };
@@ -45,8 +46,8 @@ static const uint qt_meta_data_Client[] = {
 static const char qt_meta_stringdata_Client[] = {
     "Client\0\0,\0newMessage(QString,QString)\0"
     "clientCursorMoved(QString,int)\0"
-    "addUser(QString)\0socketError\0"
-    "displayError(QAbstractSocket::SocketError)\0"
+    "addUser(QString)\0clientKeyPressed(QString,QString)\0"
+    "socketError\0displayError(QAbstractSocket::SocketError)\0"
     "sessionOpened()\0read()\0"
 };
 
@@ -59,9 +60,10 @@ void Client::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void
         case 0: _t->newMessage((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< QString(*)>(_a[2]))); break;
         case 1: _t->clientCursorMoved((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
         case 2: _t->addUser((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 3: _t->displayError((*reinterpret_cast< QAbstractSocket::SocketError(*)>(_a[1]))); break;
-        case 4: _t->sessionOpened(); break;
-        case 5: _t->read(); break;
+        case 3: _t->clientKeyPressed((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< QString(*)>(_a[2]))); break;
+        case 4: _t->displayError((*reinterpret_cast< QAbstractSocket::SocketError(*)>(_a[1]))); break;
+        case 5: _t->sessionOpened(); break;
+        case 6: _t->read(); break;
         default: ;
         }
     }
@@ -99,9 +101,9 @@ int Client::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 6)
+        if (_id < 7)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 6;
+        _id -= 7;
     }
     return _id;
 }
@@ -125,5 +127,12 @@ void Client::addUser(QString _t1)
 {
     void *_a[] = { 0, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
     QMetaObject::activate(this, &staticMetaObject, 2, _a);
+}
+
+// SIGNAL 3
+void Client::clientKeyPressed(QString _t1, QString _t2)
+{
+    void *_a[] = { 0, const_cast<void*>(reinterpret_cast<const void*>(&_t1)), const_cast<void*>(reinterpret_cast<const void*>(&_t2)) };
+    QMetaObject::activate(this, &staticMetaObject, 3, _a);
 }
 QT_END_MOC_NAMESPACE

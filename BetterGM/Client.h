@@ -17,7 +17,8 @@ public:
         MSG_CODE = 2,
         MSG_FILE = 3,
         MSG_ADD = 4,
-        MSG_REMOVE = 5
+        MSG_REMOVE = 5,
+        MSG_KEY = 6
     };
     
     QString getIP() {
@@ -40,6 +41,7 @@ signals:
     void newMessage(QString, QString);
     void clientCursorMoved(QString, int);
     void addUser(QString);
+    void clientKeyPressed(QString, QString);
     
 private:
     QString mIPAddress;

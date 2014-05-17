@@ -263,6 +263,7 @@ void MainWindow::createCodeEditor() {
     mCodeEditor->setCompleter(mCompleter);
     
     connect(mCodeEditor, SIGNAL(cursorPosition(int)), SLOT(getCursorPosition(int)));
+    connect(mCodeEditor, SIGNAL(pressed(QString)), this, SLOT(keyPressed(QString)));
     
     mCentralWidget->addWidget(mCodeEditor, mCodeEditor->getName());
     mCodeEditor->setFocus();
@@ -492,6 +493,7 @@ void MainWindow::makeHost() {
     connect(mServer, SIGNAL(newMessage(QString,QString)), this, SLOT(recieveMessage(QString,QString)));
     connect(mServer, SIGNAL(serverCursorMoved(QString,int)), this, SLOT(clientCursorMoved(QString,int)));
     connect(mServer, SIGNAL(addUser(QString)), this, SLOT(addUser(QString)));
+    connect(mServer, SIGNAL(serverKeyPressed(QString,QString)), this, SLOT(clientKeyPressed(QString,QString)));
     mServer->start();
 }
 
@@ -510,6 +512,7 @@ void MainWindow::makeClient() {
     connect(mLocalClient, SIGNAL(newMessage(QString,QString)), this, SLOT(recieveMessage(QString,QString)));
     connect(mLocalClient, SIGNAL(clientCursorMoved(QString,int)), this, SLOT(clientCursorMoved(QString,int)));
     connect(mLocalClient, SIGNAL(addUser(QString)), this, SLOT(addUser(QString)));
+    connect(mLocalClient, SIGNAL(clientKeyPressed(QString,QString)), this, SLOT(clientKeyPressed(QString,QString)));
     
     mLocalClient->tryConnect();
 }
@@ -590,6 +593,10 @@ void MainWindow::clientCursorMoved(QString client, int pos) {
     mCodeEditor->moveClientCursor(client, pos);
 }
 
+void MainWindow::clientKeyPressed(QString client, QString key) {
+    mCodeEditor->clientKeyPressed(client, key);
+}
+
 void MainWindow::addUser(QString user) {
     //qDebug() << "add" << user;
     QTextCursor cursor(mCodeEditor->document());
@@ -623,11 +630,23 @@ void MainWindow::setCanSendTrue(QString) {
 }
 
 void MainWindow::getCursorPosition(int pos) {
-    //qDebug() << "pos =" << pos;
     if (mServer) {
         mServer->sendMessage("1 " + mUsername, QString::number(pos));
     } else if (mLocalClient) {
         mLocalClient->sendMessage("1 " + mUsername, QString::number(pos));
+    }
+}
+
+void MainWindow::keyPressed(QString key) {
+    if (key.isEmpty()) {
+        return;
+    }
+    
+    qDebug() << "key" << key;
+    if (mServer) {
+        mServer->sendMessage("6 " + mUsername, key);
+    } else if (mLocalClient) {
+        mLocalClient->sendMessage("6 " + mUsername, key);
     }
 }
 

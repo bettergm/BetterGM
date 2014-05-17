@@ -703,6 +703,8 @@ void CodeEditor::keyPressEvent(QKeyEvent *e) {
     
     mSelectedText = textCursor().selectedText();
     
+    emit pressed(e->text());
+    
     switch (e->key()) {
     case Qt::Key_Apostrophe:
     case Qt::Key_QuoteDbl:
@@ -1417,6 +1419,11 @@ void CodeEditor::moveClientCursor(QString client, int pos) {
     cursor.setPosition(pos);
     mCursors.insert(client, cursor);
     repaint();
+}
+
+void CodeEditor::clientKeyPressed(QString client, QString key) {
+    int pos = mCursors.value(client).position();
+    qDebug() << key << pos;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////

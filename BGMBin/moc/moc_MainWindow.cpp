@@ -22,7 +22,7 @@ static const uint qt_meta_data_MainWindow[] = {
        6,       // revision
        0,       // classname
        0,    0, // classinfo
-      25,   14, // methods
+      27,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -55,6 +55,8 @@ static const uint qt_meta_data_MainWindow[] = {
      462,  458,   11,   11, 0x0a,
      485,   11,   11,   11, 0x0a,
      499,   11,   11,   11, 0x0a,
+     514,  510,   11,   11, 0x0a,
+     545,  534,   11,   11, 0x0a,
 
        0        // eod
 };
@@ -74,7 +76,8 @@ static const char qt_meta_stringdata_MainWindow[] = {
     "setLoadPrevious()\0setCanSendFalse(QString)\0"
     "setCanSendTrue(QString)\0pos\0"
     "getCursorPosition(int)\0readGameOut()\0"
-    "playGame()\0"
+    "playGame()\0key\0keyPressed(QString)\0"
+    "client,key\0clientKeyPressed(QString,QString)\0"
 };
 
 void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
@@ -108,6 +111,8 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 22: _t->getCursorPosition((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 23: _t->readGameOut(); break;
         case 24: _t->playGame(); break;
+        case 25: _t->keyPressed((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 26: _t->clientKeyPressed((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< QString(*)>(_a[2]))); break;
         default: ;
         }
     }
@@ -145,9 +150,9 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 25)
+        if (_id < 27)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 25;
+        _id -= 27;
     }
     return _id;
 }
