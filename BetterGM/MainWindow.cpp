@@ -586,12 +586,12 @@ void MainWindow::recieveMessage(QString from, QString msg) {
 }
 
 void MainWindow::clientCursorMoved(QString client, int pos) {
-    qDebug() << "move" << client << pos;
+    //qDebug() << "move" << client << pos;
     mCodeEditor->moveClientCursor(client, pos);
 }
 
 void MainWindow::addUser(QString user) {
-    qDebug() << "add" << user;
+    //qDebug() << "add" << user;
     QTextCursor cursor(mCodeEditor->document());
     cursor.setPosition(0);
     mCodeEditor->addCursor(user, cursor);

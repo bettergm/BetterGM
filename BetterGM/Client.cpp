@@ -98,8 +98,6 @@ void Client::read() {
     QString type;
     int msgType;
     
-    qDebug() << tmp;
-    
     int i = 0;
     for (; i < tmp.length(); i++) {
         if (tmp[i] != ' ') {
