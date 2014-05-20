@@ -459,20 +459,22 @@ void CodeEditor::paintEvent(QPaintEvent *e) {
     px = cursorRect(textCursor()).x();
     int py = cursorRect(textCursor()).y();
     
-    if (textLeftOfCursor(true).contains("isDown") /*&& textCursor().block() == block*/) {
-        QString hint = "isDown(int keyOrButton)\nChecks if a key or mouse button is down.";
+    QTextCursor cursor = textCursor();
+    cursor.select(QTextCursor::WordUnderCursor);
+    if (textLeftOfCursor(true).contains("button") || cursor.selectedText() == "button") {
+        QString hint = "button(sprite, x, y, width, height, text, sub pic, subimg, name)\nCreates a button. Returns true when pressed.";
         painter.setOpacity(0.75);
         QFontMetrics met(this->font());
         int width = met.boundingRect(viewport()->rect(), Qt::AlignLeft | Qt::AlignVCenter, hint).width();
         int height = met.boundingRect(viewport()->rect(), Qt::AlignLeft | Qt::AlignVCenter, hint).height();
         QRect rekt(px, py + 16, width + 16, height + 4);
-        painter.fillRect(rekt, Qt::darkCyan);
-        painter.setPen(QPen(Qt::cyan));
+        painter.fillRect(rekt, Qt::black);
+        painter.setPen(QPen(Qt::white));
         painter.drawRect(rekt);
         painter.setOpacity(1.0);
         rekt = QRect(px + 8, py + 18, width, height);
         painter.drawText(rekt, Qt::AlignLeft | Qt::AlignVCenter, hint);
-    } else if (textLeftOfCursor(true).contains("isPressed") /*&& textCursor().block() == block*/) {
+    } else if (textLeftOfCursor(true).contains("isPressed") || cursor.selectedText() == "isPressed") {
         QString hint = "isPressed(int keyOrButton)\nChecks if a key or mouse button is pressed\nOnly returns true on press.";
         painter.setOpacity(0.75);
         QFontMetrics met(this->font());
@@ -485,7 +487,7 @@ void CodeEditor::paintEvent(QPaintEvent *e) {
         painter.setOpacity(1.0);
         rekt = QRect(px + 8, py + 18, width, height);
         painter.drawText(rekt, Qt::AlignLeft | Qt::AlignVCenter, hint);
-    } else if (textLeftOfCursor(true).contains("draw_text") /*&& textCursor().block() == block*/) {
+    } else if (textLeftOfCursor(true).contains("draw_text") || cursor.selectedText() == "draw_text") {
         QString hint = "draw_text(x, y, text)\nDraws text at x, y.";
         painter.setOpacity(0.75);
         QFontMetrics met(this->font());

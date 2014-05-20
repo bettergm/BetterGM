@@ -473,6 +473,11 @@ void MainWindow::openItem(QString path, QString name) {
 }
 
 void MainWindow::saveFile() {
+    if (!mServer) {
+        QMessageBox::information(this, tr("Save"), tr("You can only save if you are hosting!"));
+        return;
+    }
+    
     QFile file(mCurrentItemPath);
     
     if (file.open(QIODevice::WriteOnly | QIODevice::Text)) {
