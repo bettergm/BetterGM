@@ -13,6 +13,7 @@
 #include <QFile>
 #include <QUndoStack>
 #include <QDebug>
+#include <QMessageBox>
 
 CodeEditor::CodeEditor(QString name, QWidget *parent, Highlighter *h):
     QPlainTextEdit(parent),
@@ -451,7 +452,7 @@ void CodeEditor::paintEvent(QPaintEvent *e) {
     QPointF viewportOffset = contentOffset();
     
     QFont font = currentCharFormat().font();
-    int charWidth = qRound(QFontMetrics(font).averageCharWidth());
+    int charWidth = qRound((float)QFontMetrics(font).averageCharWidth());
     int px = (charWidth * textCursor().positionInBlock()) 
             + contentOffset().x() 
             + document()->documentMargin();

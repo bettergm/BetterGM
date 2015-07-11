@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'JoinDialog.ui'
 **
-** Created by: Qt User Interface Compiler version 4.8.5
+** Created by: Qt User Interface Compiler version 5.5.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -10,17 +10,17 @@
 #define UI_JOINDIALOG_H
 
 #include <QtCore/QVariant>
-#include <QtGui/QAction>
-#include <QtGui/QApplication>
-#include <QtGui/QButtonGroup>
-#include <QtGui/QDialog>
-#include <QtGui/QDialogButtonBox>
-#include <QtGui/QHBoxLayout>
-#include <QtGui/QHeaderView>
-#include <QtGui/QLabel>
-#include <QtGui/QLineEdit>
-#include <QtGui/QVBoxLayout>
-#include <QtGui/QWidget>
+#include <QtWidgets/QAction>
+#include <QtWidgets/QApplication>
+#include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QDialog>
+#include <QtWidgets/QDialogButtonBox>
+#include <QtWidgets/QHBoxLayout>
+#include <QtWidgets/QHeaderView>
+#include <QtWidgets/QLabel>
+#include <QtWidgets/QLineEdit>
+#include <QtWidgets/QVBoxLayout>
+#include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
 
@@ -40,28 +40,28 @@ public:
     void setupUi(QDialog *JoinDialog)
     {
         if (JoinDialog->objectName().isEmpty())
-            JoinDialog->setObjectName(QString::fromUtf8("JoinDialog"));
+            JoinDialog->setObjectName(QStringLiteral("JoinDialog"));
         JoinDialog->resize(400, 150);
         buttonBox = new QDialogButtonBox(JoinDialog);
-        buttonBox->setObjectName(QString::fromUtf8("buttonBox"));
+        buttonBox->setObjectName(QStringLiteral("buttonBox"));
         buttonBox->setGeometry(QRect(30, 110, 341, 32));
         buttonBox->setOrientation(Qt::Horizontal);
         buttonBox->setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::Ok);
         verticalLayoutWidget = new QWidget(JoinDialog);
-        verticalLayoutWidget->setObjectName(QString::fromUtf8("verticalLayoutWidget"));
+        verticalLayoutWidget->setObjectName(QStringLiteral("verticalLayoutWidget"));
         verticalLayoutWidget->setGeometry(QRect(10, 10, 380, 90));
         verticalLayout = new QVBoxLayout(verticalLayoutWidget);
-        verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
+        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         verticalLayout->setContentsMargins(0, 0, 0, 0);
         horizontalLayout = new QHBoxLayout();
-        horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
+        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
         label = new QLabel(verticalLayoutWidget);
-        label->setObjectName(QString::fromUtf8("label"));
+        label->setObjectName(QStringLiteral("label"));
 
         horizontalLayout->addWidget(label);
 
         ipEdit = new QLineEdit(verticalLayoutWidget);
-        ipEdit->setObjectName(QString::fromUtf8("ipEdit"));
+        ipEdit->setObjectName(QStringLiteral("ipEdit"));
 
         horizontalLayout->addWidget(ipEdit);
 
@@ -69,14 +69,14 @@ public:
         verticalLayout->addLayout(horizontalLayout);
 
         horizontalLayout_2 = new QHBoxLayout();
-        horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
+        horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
         label_2 = new QLabel(verticalLayoutWidget);
-        label_2->setObjectName(QString::fromUtf8("label_2"));
+        label_2->setObjectName(QStringLiteral("label_2"));
 
         horizontalLayout_2->addWidget(label_2);
 
         portEdit = new QLineEdit(verticalLayoutWidget);
-        portEdit->setObjectName(QString::fromUtf8("portEdit"));
+        portEdit->setObjectName(QStringLiteral("portEdit"));
 
         horizontalLayout_2->addWidget(portEdit);
 
@@ -93,10 +93,10 @@ public:
 
     void retranslateUi(QDialog *JoinDialog)
     {
-        JoinDialog->setWindowTitle(QApplication::translate("JoinDialog", "Dialog", 0, QApplication::UnicodeUTF8));
-        label->setText(QApplication::translate("JoinDialog", "IP:", 0, QApplication::UnicodeUTF8));
-        label_2->setText(QApplication::translate("JoinDialog", "Port:", 0, QApplication::UnicodeUTF8));
-        portEdit->setText(QApplication::translate("JoinDialog", "1337", 0, QApplication::UnicodeUTF8));
+        JoinDialog->setWindowTitle(QApplication::translate("JoinDialog", "Dialog", 0));
+        label->setText(QApplication::translate("JoinDialog", "IP:", 0));
+        label_2->setText(QApplication::translate("JoinDialog", "Port:", 0));
+        portEdit->setText(QApplication::translate("JoinDialog", "1337", 0));
     } // retranslateUi
 
 };

@@ -34,7 +34,7 @@ void setMainWindow(MainWindow *mw) {
     w = mw;
 }
 
-void catchMessage(QtMsgType type, const char *msg) {
+void catchMessage(QtMsgType type, const QMessageLogContext &, const QString &msg) {
     switch (type) {
     case QtDebugMsg:
         w->debug(msg);
@@ -147,17 +147,17 @@ MainWindow::~MainWindow() {
 }
 
 void MainWindow::installMessageHandler() {
-    qInstallMsgHandler(catchMessage);
+    qInstallMessageHandler(catchMessage);
 }
 
-void MainWindow::debug(const char *msg) {
+void MainWindow::debug(const QString &msg) {
     ui->chatText->moveCursor(QTextCursor::End);
     ui->chatText->setTextColor(Qt::cyan);
     ui->chatText->insertPlainText("[debug] ");
     ui->chatText->setTextColor(Qt::white);
     ui->chatText->insertPlainText(QString(msg) + "\n");
 }
-void MainWindow::warn(const char *msg) {
+void MainWindow::warn(const QString &msg) {
     ui->chatText->moveCursor(QTextCursor::End);
     ui->chatText->setTextColor(QColor(230, 219, 116));
     ui->chatText->insertPlainText("[warning] ");
@@ -165,7 +165,7 @@ void MainWindow::warn(const char *msg) {
     ui->chatText->insertPlainText(QString(msg) + "\n");
 }
 
-void MainWindow::crit(const char *msg) {
+void MainWindow::crit(const QString &msg) {
     ui->chatText->moveCursor(QTextCursor::End);
     ui->chatText->setTextColor(Qt::red);
     ui->chatText->insertPlainText("[critical] ");
@@ -173,7 +173,7 @@ void MainWindow::crit(const char *msg) {
     ui->chatText->insertPlainText(QString(msg) + "\n");
 }
 
-void MainWindow::fail(const char *msg) {
+void MainWindow::fail(const QString &msg) {
     ui->chatText->moveCursor(QTextCursor::End);
     ui->chatText->setTextColor(Qt::red);
     ui->chatText->insertPlainText("[fatal] ");

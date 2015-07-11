@@ -29,10 +29,10 @@ public:
     ~MainWindow();
     
     void installMessageHandler();
-    void debug(const char* msg);
-    void warn(const char* msg);
-    void crit(const char* msg);
-    void fail(const char* msg);
+    void debug(const QString &msg);
+    void warn(const QString &msg);
+    void crit(const QString &msg);
+    void fail(const QString &msg);
     
     ProjectItem /*QTreeWidgetItem*/ *addRoot(QString name, ProjectItem::Type type);
     void addChild(ProjectItem /*QTreeWidgetItem*/ *parent, ProjectItem::Type type, QString path, QString name, QIcon &icon);
@@ -116,6 +116,6 @@ private:
 };
 
 void setMainWindow(MainWindow *mw);
-void catchMessage(QtMsgType type, const char *msg);
+void catchMessage(QtMsgType type, const QMessageLogContext &context, const QString &msg);
 
 #endif // MAINWINDOW_H

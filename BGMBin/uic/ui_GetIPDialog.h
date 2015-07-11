@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'GetIPDialog.ui'
 **
-** Created by: Qt User Interface Compiler version 4.8.5
+** Created by: Qt User Interface Compiler version 5.5.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -10,16 +10,16 @@
 #define UI_GETIPDIALOG_H
 
 #include <QtCore/QVariant>
-#include <QtGui/QAction>
-#include <QtGui/QApplication>
-#include <QtGui/QButtonGroup>
-#include <QtGui/QDialog>
-#include <QtGui/QDialogButtonBox>
-#include <QtGui/QHBoxLayout>
-#include <QtGui/QHeaderView>
-#include <QtGui/QLabel>
-#include <QtGui/QLineEdit>
-#include <QtGui/QWidget>
+#include <QtWidgets/QAction>
+#include <QtWidgets/QApplication>
+#include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QDialog>
+#include <QtWidgets/QDialogButtonBox>
+#include <QtWidgets/QHBoxLayout>
+#include <QtWidgets/QHeaderView>
+#include <QtWidgets/QLabel>
+#include <QtWidgets/QLineEdit>
+#include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
 
@@ -35,26 +35,26 @@ public:
     void setupUi(QDialog *GetIPDialog)
     {
         if (GetIPDialog->objectName().isEmpty())
-            GetIPDialog->setObjectName(QString::fromUtf8("GetIPDialog"));
+            GetIPDialog->setObjectName(QStringLiteral("GetIPDialog"));
         GetIPDialog->resize(243, 103);
         buttonBox = new QDialogButtonBox(GetIPDialog);
-        buttonBox->setObjectName(QString::fromUtf8("buttonBox"));
+        buttonBox->setObjectName(QStringLiteral("buttonBox"));
         buttonBox->setGeometry(QRect(10, 60, 220, 32));
         buttonBox->setOrientation(Qt::Horizontal);
         buttonBox->setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::Ok);
         horizontalLayoutWidget = new QWidget(GetIPDialog);
-        horizontalLayoutWidget->setObjectName(QString::fromUtf8("horizontalLayoutWidget"));
+        horizontalLayoutWidget->setObjectName(QStringLiteral("horizontalLayoutWidget"));
         horizontalLayoutWidget->setGeometry(QRect(10, 10, 220, 40));
         horizontalLayout = new QHBoxLayout(horizontalLayoutWidget);
-        horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
+        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
         horizontalLayout->setContentsMargins(0, 0, 0, 0);
         labelIP = new QLabel(horizontalLayoutWidget);
-        labelIP->setObjectName(QString::fromUtf8("labelIP"));
+        labelIP->setObjectName(QStringLiteral("labelIP"));
 
         horizontalLayout->addWidget(labelIP);
 
         ipEdit = new QLineEdit(horizontalLayoutWidget);
-        ipEdit->setObjectName(QString::fromUtf8("ipEdit"));
+        ipEdit->setObjectName(QStringLiteral("ipEdit"));
 
         horizontalLayout->addWidget(ipEdit);
 
@@ -68,9 +68,9 @@ public:
 
     void retranslateUi(QDialog *GetIPDialog)
     {
-        GetIPDialog->setWindowTitle(QApplication::translate("GetIPDialog", "IP", 0, QApplication::UnicodeUTF8));
-        labelIP->setText(QApplication::translate("GetIPDialog", "IP", 0, QApplication::UnicodeUTF8));
-        ipEdit->setText(QApplication::translate("GetIPDialog", "127.0.0.1", 0, QApplication::UnicodeUTF8));
+        GetIPDialog->setWindowTitle(QApplication::translate("GetIPDialog", "IP", 0));
+        labelIP->setText(QApplication::translate("GetIPDialog", "IP", 0));
+        ipEdit->setText(QApplication::translate("GetIPDialog", "127.0.0.1", 0));
     } // retranslateUi
 
 };
